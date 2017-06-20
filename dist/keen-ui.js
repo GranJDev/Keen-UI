@@ -1017,14 +1017,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _classlist = __webpack_require__(23);
 	
-	var _classlist3 = _interopRequireDefault(_classlist);
+	var _classlist2 = _interopRequireDefault(_classlist);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var startRipple = function startRipple(eventType, event) {
 	    var holder = event.currentTarget || event.target;
 	
-	    if (holder && !_classlist2.default.has(holder, 'ui-ripple-ink')) {
+	    if (holder && !_classlist3.default.has(holder, 'ui-ripple-ink')) {
 	        holder = holder.querySelector('.ui-ripple-ink');
 	    }
 	
@@ -1071,7 +1071,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    holder.appendChild(ripple);
 	
 	    setTimeout(function () {
-	        _classlist3.default.add(ripple, 'held');
+	        _classlist2.default.add(ripple, 'held');
 	    }, 0);
 	
 	    var releaseEvent = eventType === 'mousedown' ? 'mouseup' : 'touchend';
@@ -1079,13 +1079,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var release = function release() {
 	        document.removeEventListener(releaseEvent, release);
 	
-	        _classlist3.default.add(ripple, 'done');
+	        _classlist2.default.add(ripple, 'done');
 	
 	        setTimeout(function () {
 	            holder.removeChild(ripple);
 	
 	            if (!holder.children.length) {
-	                _classlist3.default.remove(holder, 'active');
+	                _classlist2.default.remove(holder, 'active');
 	                holder.removeAttribute('data-ui-event');
 	            }
 	        }, 450);

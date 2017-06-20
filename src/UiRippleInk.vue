@@ -14,7 +14,7 @@ import classlist from './helpers/classlist';
 var startRipple = function startRipple(eventType, event) {
     var holder = event.currentTarget || event.target;
 
-     if (holder && !_classlist2.default.has(holder, 'ui-ripple-ink')) {
+     if (holder && !_classlist3.default.has(holder, 'ui-ripple-ink')) {
          holder = holder.querySelector('.ui-ripple-ink');
      }
 
