@@ -12,15 +12,15 @@
 import classlist from './helpers/classlist';
 
 var startRipple = function startRipple(eventType, event) {
-    var holder = event.currentTarget;
+    var holder = event.currentTarget || event.target;
 
-    if (! classlist.has(holder, 'ui-ripple-ink')) {
-        holder = holder.querySelector('.ui-ripple-ink');
+     if (holder && !_classlist2.default.has(holder, 'ui-ripple-ink')) {
+         holder = holder.querySelector('.ui-ripple-ink');
+     }
 
-        if (!holder) {
-            return;
-        }
-    }
+     if (!holder) {
+         return;
+     }
 
     // Store the event use to generate this ripple on the holder: don't allow
     // further events of different types until we're done. Prevents double-
